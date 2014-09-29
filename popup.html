@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settaggi - Reply News and Events Extension</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+	<meta name="AUTHOR" content="Pasturenzi Francesco">
+	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+	<meta http-equiv="PRAGMA" content="NO-CACHE">
+	<meta name="ROBOTS" content="NONE,NOARCHIVE"> 
+	<meta name="GOOGLEBOT" content="NOARCHIVE"> 
+	
+	<link type="text/css" rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+	<link type="text/css" rel="stylesheet" href="css/styles-pajinate.css" />
+	
+	<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
+	<script type="text/javascript" src="js/jquery.pajinate.js"></script>
+	<script type="text/javascript" src="popup.js"></script>
+	<script type="text/javascript" src="twitter.js"></script>
+	<script type="text/javascript" src="googleplus.js"></script>
+
+	<style type="text/css">
+		.button{
+			padding:1px;
+			padding-left:5px;
+			padding-right:5px;
+			cursor:pointer;
+		}
+		.button1_select{
+			color:#FFFFFF;
+			background:#3B3B3B;
+			cursor:pointer;
+		}
+		.button2_select{
+			color:#FFFFFF;
+			background:#3B3B3B;
+			cursor:pointer;		
+		}
+		.page_navigation a{
+			background-color: #56B346 !important;
+		}
+		.reply_date{
+			color: #FF0000;
+			font-weight:bold;
+		}
+		.reply_tags{
+			color: #3AB9EC;
+			font-weight:bold;
+		}
+		.titolo {
+			color:#5AB54A !important;
+			font-weight:bold;
+		}
+	</style>
+
+
+</head>
+<body style="background:#000000;">
+
+	<div id="wrapper" style="width:620px;height:400px;padding:10px;margin:auto;position:relative;background:#000000;">
+			
+			<div style="width:280px;margin:auto;position:relative;background:#000000;">
+				<div style="position:absolute;top:-10px;left:-180px;">
+				<a href="#">
+					<img src="./images/reply_header.jpg" style="width:245px;" alt="Reply.eu logo" title="Reply.eu"/>
+				</a>
+				</div>
+				<img src="./images/nastro.png" style="z-index:1000;position:absolute;top:50px;left:66px;width:357px"/>
+			
+				<div style="color:#000000;padding-left:10px;position:absolute;left:65px;background:#5AB44A;width:365px;top:0px;">
+					<span class="button" id="news">News</span> <span class="button button1_select" id="events">Events</span>
+				</div>
+				<div style="color:#000000;padding-left:10px;position:absolute;left:65px;background:#215231;width:350px;top:35px">
+					<span class="button" id="IT">Italy</span> <span class="button button2_select" id="UK">UK</span> <span class="button" id="DE">Germany</span>
+				</div>
+				
+				<div style="position:absolute;top:0px;left:225px;">
+					<img id="reply_twitter" src="./images/twitter.png" style="width:58px;cursor:pointer;z-index:1000;" alt="Twitter Reply Accounts" title="Twitter Reply Accounts"/>
+				</div>
+				<div id="reply_twitter_accounts" style="position:absolute;top:55px;left:251px;width:164px;background:#1E78B4;z-index:1000;padding:5px;">
+					<div class="accounts_twitter">
+						<a  href="https://twitter.com/replyeu" style="text-decoration:none;" target="_blank">
+						<img src="./images/replyeu_logo.png" style="border-radius:8px;width:40px;" alt="@replyeu" title="@replyeu"/> <span class="twitter_item">@replyeu</span>
+						</a>
+					</div>
+					<div class="accounts_twitter">
+						<a class="accounts_twitter" style="text-decoration:none;" href="https://twitter.com/forgereply" target="_blank">
+						<img src="./images/forgereply_logo.png" style="border-radius:8px;width:40px;" alt="@forgereply" title="@forgereply"/> <span class="twitter_item">@forgereply</span>
+						</a>
+					</div>
+					<div class="accounts_twitter">
+						<a class="accounts_twitter" style="text-decoration:none;" href="https://twitter.com/GlueReplyJobs" target="_blank">
+						<img src="./images/GlueReplyJobs_logo.jpg" style="border-radius:8px;width:40px;" alt="@GlueReplyJobs" title="@GlueReplyJobs"/> <span class="twitter_item">@GlueReplyJobs</span>
+						</a>
+					</div>
+					<div class="accounts_twitter">
+						<a class="accounts_twitter" style="text-decoration:none;" href="https://twitter.com/ReplyLivingNet" target="_blank">
+						<img src="./images/ReplyLivingNet_logo.png" style="border-radius:8px;width:40px;" alt="@ReplyLivingNet" title="@ReplyLivingNet"/> <span class="twitter_item">@ReplyLivingNet</span>
+						</a>
+					</div>
+					<div class="accounts_twitter">
+						<a class="accounts_twitter" style="text-decoration:none;" href="https://twitter.com/Starbytes_it" target="_blank">
+						<img src="./images/Starbytes_it_logo.png" style="border-radius:8px;width:40px;" alt="@Starbytes_it" title="@Starbytes_it"/> <span class="twitter_item">@Starbytes_it</span>
+						</a>
+					</div>
+					<div class="accounts_twitter">
+						<a class="accounts_twitter" style="text-decoration:none;" href="https://twitter.com/GlueReply" target="_blank">
+						<img src="./images/GlueReply_logo.jpg" style="border-radius:8px;width:40px;" alt="@GlueReply" title="@GlueReply"/> <span class="twitter_item">@GlueReply</span>
+						</a>
+					</div>
+					<div class="accounts_twitter">
+						<a class="accounts_twitter" style="text-decoration:none;"  href="https://twitter.com/ReplyUK" target="_blank">
+						<img src="./images/ReplyUK_logo.png" style="border-radius:8px;width:40px;" alt="@ReplyUK" title="@ReplyUK"/> <span class="twitter_item">@ReplyUK</span>
+						</a>
+					</div>
+					<div class="accounts_twitter">
+						<a class="accounts_twitter" style="text-decoration:none;" href="https://twitter.com/ReplyULabs" target="_blank">
+						<img src="./images/ReplyULabs_logo.jpeg" style="border-radius:8px;width:40px;" alt="@ReplyULabs" title="@ReplyULabs"/> <span class="twitter_item">@ReplyULabs</span>
+						</a>
+					</div>
+					<div class="accounts_twitter">
+						<a class="accounts_twitter" style="text-decoration:none;" href="https://twitter.com/TamTamy" target="_blank">
+						<img src="./images/TamTamy_logo.jpg" style="border-radius:8px;width:40px;" alt="@TamTamy" title="@TamTamy"/>  <span class="twitter_item">@TamTamy</span>
+						</a>	
+					</div>
+					<div class="accounts_twitter">
+						<a class="accounts_twitter" style="text-decoration:none;" href="https://twitter.com/bitmama" target="_blank">
+						<img src="./images/bitmama_logo.png" style="border-radius:8px;width:40px;" alt="@bitmama" title="@bitmama"/> <span class="twitter_item">@bitmama</span>
+						</a>				
+					</div>
+				</div>
+				
+				<div style="position:absolute;top:0px;left:380px;">
+					<a href="http://www.appuntivari.net" target="_blank">
+						<img src="./images/pastuweb.png" style="width:40px;" alt="Pastuweb logo" title="Pastuweb"/>
+					</a>
+				</div>
+				
+			</div>
+
+			<div id="paging_container" class="container" 
+				style="width:580px;border:15px solid #3B3B3B;background:#000000;margin-bottom:10px;">
+				<br><br><br><br>
+				<div class="page_navigation"></div>
+				<br>
+				<p style="color:#FFFFFF;background:#000000;position:relative;padding-left:5px;border-bottom:1px solid #EFEFEF;font-weight:bold;">
+				<span>Reply <span id="tipoNotizia"></span> in <span id="sigla"></span>.</span>
+				</p>
+				<p id="loading" style="text-align:center;">
+				<br>
+				<img  src="./images/loading.gif"  alt="Reply.eu loading News and Events" title="Reply.eu loading News and Events"/>
+				<br><br>
+				</p>
+				<ul class="content">
+					<!-- AJAX Content-->
+				</ul>
+				
+			</div>
+
+		</div>
+</body>
+</html>
